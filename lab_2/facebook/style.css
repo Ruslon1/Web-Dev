@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 130px;
+}
+
+.page-link {
+    width: 360px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 24px;
+}
+
+
+.left {
+    width: 500px;
+    margin-top: 40px;
+    margin-right: 90px;
+}
+
+.logo {
+    width: 300px;
+    margin-bottom: -40px;
+    margin-left: -28px;
+}
+
+.left p {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.card {
+    background: white;
+    width: 360px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card input {
+    height: 48px;
+    font-size: 17px;
+    padding: 0 14px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+}
+
+.login {
+    background: #1877f2;
+    color: white;
+    font-size: 20px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+}
+
+.forgot {
+    text-align: center;
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.line {
+    height: 1px;
+    background: #dadde1;
+    margin: 10px 0;
+}
+
+.create {
+    align-self: center;
+    width: auto;
+    padding: 0 24px;
+    background: #42b72a;
+    color: white;
+    height: 48px;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+}
