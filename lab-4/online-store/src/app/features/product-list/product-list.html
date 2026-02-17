@@ -49,24 +49,19 @@
                     Open on Kaspi
                 </a>
 
-                <div class="shareActions">
-                    <a
-                        class="shareBtn whatsapp"
-                        [href]="getWhatsAppShareLink(p)"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Share WhatsApp
-                    </a>
-                    <a
-                        class="shareBtn telegram"
-                        [href]="getTelegramShareLink(p)"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Share Telegram
-                    </a>
-                </div>
+                <details class="shareMenu">
+                    <summary class="shareMenuButton">Share</summary>
+                    <div class="shareMenuList">
+                        <a class="shareBtn whatsapp" [href]="getWhatsAppShareLink(p)" target="_blank"
+                            rel="noopener noreferrer">
+                            WhatsApp
+                        </a>
+                        <a class="shareBtn telegram" [href]="getTelegramShareLink(p)" target="_blank"
+                            rel="noopener noreferrer">
+                            Telegram
+                        </a>
+                    </div>
+                </details>
             </div>
         </article>
     </div>
