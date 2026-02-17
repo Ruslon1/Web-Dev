@@ -1,0 +1,73 @@
+<section class="page">
+    <h1 class="title">Online Store</h1>
+
+    <div class="grid">
+        <article class="card" *ngFor="let p of products">
+            <div class="gallery">
+                <button
+                    *ngIf="galleryImagesById[p.id].length > 1"
+                    type="button"
+                    class="galleryNav prev"
+                    (click)="previousImage(p.id)"
+                    aria-label="Previous image"
+                >
+                    ‹
+                </button>
+
+                <a class="imageWrap" [href]="p.link" target="_blank" rel="noopener noreferrer">
+                    <img [src]="getCurrentImage(p)" [alt]="p.name" loading="lazy" />
+                </a>
+
+                <button
+                    *ngIf="galleryImagesById[p.id].length > 1"
+                    type="button"
+                    class="galleryNav next"
+                    (click)="nextImage(p.id)"
+                    aria-label="Next image"
+                >
+                    ›
+                </button>
+            </div>
+
+            <div class="content">
+                <h2 class="name">{{ p.name }}</h2>
+                <p class="desc">{{ p.description }}</p>
+
+                <div class="meta">
+                    <div class="price">{{ p.price | number }} ₸</div>
+
+                    <div class="rating" aria-label="Rating">
+                        <span class="star" *ngFor="let star of stars">
+                            <span class="star-bg">★</span>
+                            <span class="star-fill" [style.width.%]="starFillPercent(p.rating, star)">★</span>
+                        </span>
+                        <span class="ratingNumber">{{ p.rating }}</span>
+                    </div>
+                </div>
+
+                <a class="btn" [href]="p.link" target="_blank" rel="noopener noreferrer">
+                    Open on Kaspi
+                </a>
+
+                <div class="shareActions">
+                    <a
+                        class="shareBtn whatsapp"
+                        [href]="getWhatsAppShareLink(p)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Share WhatsApp
+                    </a>
+                    <a
+                        class="shareBtn telegram"
+                        [href]="getTelegramShareLink(p)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Share Telegram
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
