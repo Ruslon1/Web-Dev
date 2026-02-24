@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<section class="page">
+  <h1>Online Store</h1>
+
+  <div class="categories">
+    @for (category of categories; track category.id) {
+      <button
+        type="button"
+        class="category-btn"
+        [class.active]="selectedCategoryId === category.id"
+        (click)="selectCategory(category.id)">
+        {{ category.name }}
+      </button>
+    }
+  </div>
+
+  @if (selectedCategoryId === null) {
+    <p class="placeholder">Select a category to view products.</p>
+  } @else {
+    <app-product-list [products]="selectedProducts"></app-product-list>
+  }
+</section>

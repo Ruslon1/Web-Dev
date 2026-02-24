@@ -1,16 +1,21 @@
+import { Injectable } from "@angular/core";
 import { CATEGORIES } from "../data/categories.data";
 import { PRODUCTS } from "../data/products.data";
 import { Category } from "../models/category.model";
 import { Product } from "../models/product.model";
 
-function getCategories(): Category[] {
-    return CATEGORIES;
-}
+@Injectable({
+    providedIn: 'root',
+})
+export class ProductService {
+    private readonly categories: Category[] = CATEGORIES;
+    private readonly products: Product[] = PRODUCTS;
 
-function getProducts(): Product[] {
-    return PRODUCTS;
-}
+    getCategories(): Category[] {
+        return [...this.categories];
+    }
 
-function getProductsByCategory(categoryId: number): Product[] {
-    return getProducts().filter(product => product.categoryId === categoryId);
+    getProductsByCategory(categoryId: number): Product[] {
+        return this.products.filter((product) => product.categoryId === categoryId);
+    }
 }
