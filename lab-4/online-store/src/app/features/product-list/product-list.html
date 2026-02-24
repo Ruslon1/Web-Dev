@@ -1,68 +1,14 @@
-<section class="page">
-    <h1 class="title">Online Store</h1>
-
+<section class="product-list">
+  @if (visibleProducts.length === 0) {
+    <p class="empty">No products in this category</p>
+  } @else {
     <div class="grid">
-        <article class="card" *ngFor="let p of products">
-            <div class="gallery">
-                <button
-                    *ngIf="galleryImagesById[p.id].length > 1"
-                    type="button"
-                    class="galleryNav prev"
-                    (click)="previousImage(p.id)"
-                    aria-label="Previous image"
-                >
-                    ‹
-                </button>
-
-                <a class="imageWrap" [href]="p.link" target="_blank" rel="noopener noreferrer">
-                    <img [src]="getCurrentImage(p)" [alt]="p.name" loading="lazy" />
-                </a>
-
-                <button
-                    *ngIf="galleryImagesById[p.id].length > 1"
-                    type="button"
-                    class="galleryNav next"
-                    (click)="nextImage(p.id)"
-                    aria-label="Next image"
-                >
-                    ›
-                </button>
-            </div>
-
-            <div class="content">
-                <h2 class="name">{{ p.name }}</h2>
-                <p class="desc">{{ p.description }}</p>
-
-                <div class="meta">
-                    <div class="price">{{ p.price | number }} ₸</div>
-
-                    <div class="rating" aria-label="Rating">
-                        <span class="star" *ngFor="let star of stars">
-                            <span class="star-bg">★</span>
-                            <span class="star-fill" [style.width.%]="starFillPercent(p.rating, star)">★</span>
-                        </span>
-                        <span class="ratingNumber">{{ p.rating }}</span>
-                    </div>
-                </div>
-
-                <a class="btn" [href]="p.link" target="_blank" rel="noopener noreferrer">
-                    Open on Kaspi
-                </a>
-
-                <details class="shareMenu">
-                    <summary class="shareMenuButton">Share</summary>
-                    <div class="shareMenuList">
-                        <a class="shareBtn whatsapp" [href]="getWhatsAppShareLink(p)" target="_blank"
-                            rel="noopener noreferrer">
-                            WhatsApp
-                        </a>
-                        <a class="shareBtn telegram" [href]="getTelegramShareLink(p)" target="_blank"
-                            rel="noopener noreferrer">
-                            Telegram
-                        </a>
-                    </div>
-                </details>
-            </div>
-        </article>
+      @for (product of visibleProducts; track product.id) {
+        <app-product-item
+          [product]="product"
+          (delete)="onDelete($event)">
+        </app-product-item>
+      }
     </div>
+  }
 </section>

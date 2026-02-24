@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ProductListComponent } from './features/product-list/product-list';
 import { ProductService } from './services/product.service';
 import { Category } from './models/category.model';
@@ -8,7 +7,7 @@ import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, ProductListComponent],
+  imports: [CommonModule, ProductListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
