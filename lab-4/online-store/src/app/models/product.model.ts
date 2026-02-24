@@ -1,5 +1,6 @@
 export interface Product {
   id: number;
+  categoryId: number;
   name: string;
   description: string;
   price: number;
@@ -7,4 +8,5 @@ export interface Product {
   image: string;
   images: string[];
   link: string;
+  likes: number;
 }
