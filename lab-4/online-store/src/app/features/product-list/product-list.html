@@ -1,14 +1,12 @@
 <section class="product-list">
   @if (visibleProducts.length === 0) {
-    <p class="empty">No products in this category</p>
+  <p class="empty">No products in this category</p>
   } @else {
-    <div class="grid">
-      @for (product of visibleProducts; track product.id) {
-        <app-product-item
-          [product]="product"
-          (delete)="onDelete($event)">
-        </app-product-item>
-      }
-    </div>
+  <div class="grid">
+    @for (product of visibleProducts; track product.id) {
+    <app-product-item [product]="product" (delete)="onDelete($event)">
+    </app-product-item>
+    }
+  </div>
   }
 </section>

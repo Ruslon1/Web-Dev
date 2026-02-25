@@ -16,7 +16,8 @@ export class ProductItemComponent implements OnChanges {
   currentImageIndex = 0;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['product']) this.currentImageIndex = 0;
+    if (changes['product'])
+      this.currentImageIndex = 0;
   }
 
   get galleryImages(): string[] {

@@ -1,14 +1,9 @@
 <article class="card">
   <div class="gallery">
     @if (galleryImages.length > 1) {
-      <button
-        type="button"
-        class="galleryNav prev"
-        (click)="previousImage()"
-        aria-label="Previous image"
-      >
-        ‹
-      </button>
+    <button type="button" class="galleryNav prev" (click)="previousImage()" aria-label="Previous image">
+      ‹
+    </button>
     }
 
     <a class="imageWrap" [href]="product.link" target="_blank" rel="noopener noreferrer">
@@ -16,14 +11,9 @@
     </a>
 
     @if (galleryImages.length > 1) {
-      <button
-        type="button"
-        class="galleryNav next"
-        (click)="nextImage()"
-        aria-label="Next image"
-      >
-        ›
-      </button>
+    <button type="button" class="galleryNav next" (click)="nextImage()" aria-label="Next image">
+      ›
+    </button>
     }
   </div>
 
@@ -36,10 +26,10 @@
 
       <div class="rating" aria-label="Rating">
         @for (star of stars; track star) {
-          <span class="star">
-            <span class="star-bg">★</span>
-            <span class="star-fill" [style.width.%]="starFillPercent(product.rating, star)">★</span>
-          </span>
+        <span class="star">
+          <span class="star-bg">★</span>
+          <span class="star-fill" [style.width.%]="starFillPercent(product.rating, star)">★</span>
+        </span>
         }
         <span class="ratingNumber">{{ product.rating }}</span>
       </div>
@@ -56,20 +46,10 @@
     <details class="shareMenu">
       <summary class="shareMenuButton">Share</summary>
       <div class="shareMenuList">
-        <a
-          class="shareBtn whatsapp"
-          [href]="getWhatsAppShareLink()"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="shareBtn whatsapp" [href]="getWhatsAppShareLink()" target="_blank" rel="noopener noreferrer">
           WhatsApp
         </a>
-        <a
-          class="shareBtn telegram"
-          [href]="getTelegramShareLink()"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="shareBtn telegram" [href]="getTelegramShareLink()" target="_blank" rel="noopener noreferrer">
           Telegram
         </a>
       </div>
