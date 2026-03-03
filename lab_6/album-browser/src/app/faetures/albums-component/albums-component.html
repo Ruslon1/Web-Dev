@@ -1,1 +1,25 @@
-<p>albums-component works!</p>
+<h1>Albums</h1>
+
+@if (isLoading) {
+<div class="loading">Loading...</div>
+}
+
+@if (isLoading === false && error) {
+<div class="error">{{ error }}</div>
+}
+
+@if (!isLoading && !error){
+<ul class="album-list">
+    @for (album of albums; track album.id) {
+    <li class="album-item" [routerLink]="['/albums', album.id]">
+        <div class="album-text">
+            <span class="album-id">#{{ album.id }}</span>
+            <span class="album-title">{{ album.title }}</span>
+        </div>
+
+        <button class="delete-btn" (click)="onDelete(album.id, $event)">
+            Delete
+        </button>
+    </li>}
+</ul>
+}
