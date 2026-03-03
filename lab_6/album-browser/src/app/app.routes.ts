@@ -6,7 +6,7 @@ import { AlbumDetailsComponent } from './faetures/album-details-component/album-
 import { AlbumPhotosComponent } from './faetures/album-photos-component/album-photos-component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'albums', component: AlbumsComponent },
