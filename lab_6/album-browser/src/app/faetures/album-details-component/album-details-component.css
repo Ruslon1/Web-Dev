@@ -1,0 +1,60 @@
+h1 {
+  max-width: 700px;
+  margin: 40px auto 20px;
+  padding: 0 15px;
+  color: #2c3e50;
+}
+
+.card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+p {
+  margin: 5px 0;
+  color: #2f3b48;
+}
+
+.error {
+  max-width: 700px;
+  margin: 12px auto;
+  padding: 0 15px;
+  color: #b00020;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.actions button,
+.actions a {
+  border: 1px solid #4f8cff;
+  background: #4f8cff;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions a:hover {
+  background: #3b6fd8;
+}

@@ -1,1 +1,25 @@
-<p>album-details-component works!</p>
+<h1>Album Details</h1>
+
+@if (isLoading) {
+  <p>Loading...</p>
+}
+
+@if (!isLoading && error) {
+  <p class="error">{{ error }}</p>
+}
+
+@if (!isLoading && album) {
+  <div class="card">
+    <p><strong>ID:</strong> {{ album.id }}</p>
+    <p><strong>User ID:</strong> {{ album.userId }}</p>
+
+    <label for="title">Title</label>
+    <input id="title" [(ngModel)]="editedTitle" />
+
+    <div class="actions">
+      <button (click)="onSave()">Save</button>
+      <a [routerLink]="['/albums', album.id, 'photos']">View Photos</a>
+      <button (click)="onBack()">Back</button>
+    </div>
+  </div>
+}
