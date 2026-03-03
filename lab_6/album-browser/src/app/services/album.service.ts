@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/internal/Observable";
+import { Observable } from "rxjs";
 import { Album } from "../models/album.model";
+import { Photo } from "../models/photo.model";
 
 @Injectable({
     providedIn: 'root',
@@ -19,8 +20,8 @@ export class AlbumService {
         return this.http.get<Album>(`${this.BASE_URL}/albums/${id}`);
     }
 
-    getAlbumPhotos(id: number): Observable<any[]> {
-        return this.http.get<any[]>(`${this.BASE_URL}/albums/${id}/photos`);
+    getAlbumPhotos(id: number): Observable<Photo[]> {
+        return this.http.get<Photo[]>(`${this.BASE_URL}/albums/${id}/photos`);
     }
 
     updateAlbum(album: Album): Observable<Album> {

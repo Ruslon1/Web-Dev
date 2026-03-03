@@ -1,0 +1,61 @@
+h1 {
+  margin: 40px auto 20px;
+  max-width: 1000px;
+  padding: 0 15px;
+  color: #2c3e50;
+}
+
+.actions {
+  max-width: 1000px;
+  margin: 0 auto 15px;
+  padding: 0 15px;
+}
+
+.back-btn {
+  display: inline-block;
+  border: 1px solid #4f8cff;
+  background: #4f8cff;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: #3b6fd8;
+}
+
+.error,
+.empty {
+  max-width: 1000px;
+  margin: 12px auto;
+  padding: 0 15px;
+}
+
+.error {
+  color: #b00020;
+}
+
+.photos-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.photo-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+}
+
+.photo-card p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #333;
+}

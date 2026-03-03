@@ -1,1 +1,30 @@
-<p>album-photos-component works!</p>
+<h1>Album Photos</h1>
+
+@if (albumId) {
+  <div class="actions">
+    <a [routerLink]="['/albums', albumId]" class="back-btn">Back</a>
+  </div>
+}
+
+@if (isLoading) {
+  <p>Loading...</p>
+}
+
+@if (!isLoading && error) {
+  <p class="error">{{ error }}</p>
+}
+
+@if (!isLoading && !error && photos.length === 0) {
+  <p class="empty">No photos found.</p>
+}
+
+@if (!isLoading && !error && photos.length > 0) {
+  <div class="photos-grid">
+    @for (photo of photos; track photo.id) {
+      <div class="photo-card">
+        <img [src]="photo.thumbnailUrl" [alt]="photo.title" [title]="photo.title" />
+        <p>{{ photo.title }}</p>
+      </div>
+    }
+  </div>
+}
