@@ -1,4 +1,9 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './faetures/home-component/home-component';
+import { AboutComponent } from './faetures/about-component/about-component';
+import { AlbumsComponent } from './faetures/albums-component/albums-component';
+import { AlbumDetailsComponent } from './faetures/album-details-component/album-details-component';
+import { AlbumPhotosComponent } from './faetures/album-photos-component/album-photos-component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home' },
