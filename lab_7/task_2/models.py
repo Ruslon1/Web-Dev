@@ -24,7 +24,7 @@ class ITDepartment(Department):
         self.technologies = technologies
 
     def describe(self):
-        return "IT department develops and maintains software"
+        return "IT department"
 
     def deploy_system(self):
         return f"{self.name} is deploying a system"
@@ -39,7 +39,7 @@ class HRDepartment(Department):
         self.region = region
 
     def describe(self):
-        return "HR department manages hiring and employees"
+        return "HR department"
 
     def conduct_interview(self):
         return f"{self.name} is conducting an interview"

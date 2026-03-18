@@ -1,5 +1,4 @@
 def front3(str):
-  # Figure the end of the front
   front_end = 3
   if len(str) < front_end:
     front_end = len(str)
